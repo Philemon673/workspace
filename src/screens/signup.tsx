@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Checkbox } from "../components/ui/Checkbox";
+import { useNavigate } from "react-router-dom";
 import { InputField } from "../components/ui/InputField";
 import { Logo } from "../assets/illustrations/Logo";
 import {
@@ -63,7 +64,7 @@ export const SignUpPage = ({ onSubmit, onSignInClick }: SignUpPageProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
-
+const navigate = useNavigate();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, type, value, checked } = e.target;
     setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
@@ -203,9 +204,16 @@ export const SignUpPage = ({ onSubmit, onSignInClick }: SignUpPageProps) => {
 
         <p className="m-0 text-center text-[18px] text-ink">
           Already have an account?{" "}
-          <button type="button" onClick={onSignInClick} className={linkButton}>
-            Sign in
-          </button>
+           <span>
+            first time?{" "}
+            <button
+              type="button"
+              onClick={() => navigate("/login" ) } 
+              className={linkButton}
+            >
+              Sign in
+            </button>
+          </span>
         </p>
       </main>
     </div>
