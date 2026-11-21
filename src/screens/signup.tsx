@@ -205,7 +205,6 @@ const navigate = useNavigate();
         <p className="m-0 text-center text-[18px] text-ink">
           Already have an account?{" "}
            <span>
-            first time?{" "}
             <button
               type="button"
               onClick={() => navigate("/login" ) } 
