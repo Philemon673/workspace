@@ -1,6 +1,8 @@
 import { CalendarCheck, CalendarDays, Clock, Timer, Trophy } from "lucide-react"
 import type { ReactNode } from "react"
-
+import { Wave } from "../../assets/illustrations/Logo"
+import NavBar from "../../components/navbar/navbar"
+import CodeScanner from "../scanner/scan"
 type StatCardProps = {
   icon: ReactNode
   label: string
@@ -31,16 +33,19 @@ function StatCard({ icon, label, value, status }: StatCardProps) {
 function Home() {
   return (
     <main className="space-y-4 p-4">
+      <NavBar />
       <header>
         <p className="text-lg font-medium text-slate-600">Good morning,</p>
-        <h1 className="text-3xl font-bold text-navy">Alex Johnson 👋</h1>
+        <h1 className="flex gap-3 text-3xl font-bold text-navy">Alex Johnson
+          <Wave />
+        </h1>
         <div className="mt-2 flex items-center gap-2 text-sm text-slate-500">
           <CalendarDays className="h-4 w-4" />
           <p>Friday, 13 November 2026</p>
         </div>
       </header>
 
-      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <section className="grid grid-cols-2 gap-3 sm:grid-cols-2">
         {/* Shift card has a badge, so it's written out separately */}
         <div className="rounded-xl bg-white p-4 shadow-sm">
           <div className="flex items-start justify-between">
@@ -72,6 +77,7 @@ function Home() {
           status="Present"
         />
       </section>
+      <CodeScanner />
     </main>
   )
 }

@@ -29,7 +29,7 @@ export const LoginPage = ({
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, type, value, checked } = e.target;
     setForm((prev) => ({
@@ -44,6 +44,7 @@ const navigate = useNavigate();
     setLoading(true);
     try {
       await onSubmit?.(form);
+    navigate("/home");
     } catch {
       setError(
         "We couldn't sign you in. Check your email and password and try again."
@@ -127,6 +128,7 @@ const navigate = useNavigate();
           )}
 
           <button
+            onClick={() => navigate("/home")}
             type="submit"
             disabled={loading}
             className="flex h-[60px] w-full cursor-pointer items-center justify-center gap-3.5 rounded-[10px] border-0 bg-brand text-xl font-medium text-white shadow-button transition hover:bg-brand-dark focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-brand/45 disabled:cursor-progress disabled:opacity-70"
@@ -146,7 +148,7 @@ const navigate = useNavigate();
             first time?{" "}
             <button
               type="button"
-              onClick={() => navigate("/signup" ) } 
+              onClick={() => navigate("/signup")}
               className={linkButton}
             >
               Sign up

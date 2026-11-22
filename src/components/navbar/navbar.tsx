@@ -3,8 +3,8 @@ import { Bell, Menu } from "lucide-react"
 
 function NavBar() {
   return (
-    <nav className="flex items-center justify-between px-4 py-3">
-      <div className="flex items-center gap-3 text-[32px] font-semibold tracking-tight text-navy lg:text-[40px]">
+    <nav className="flex items-center justify-between px-2 py-3">
+      <div className="flex items-center gap-2 text-[32px] font-semibold tracking-tight text-navy lg:text-[40px]">
         <Logo className="h-[50px] w-20" />
         <span>WorkTrack</span>
       </div>
