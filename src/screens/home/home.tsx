@@ -4,6 +4,7 @@ import { Wave } from "../../assets/illustrations/Logo";
 import NavBar from "../../components/navbar/navbar";
 import CodeScanner from "../scanner/scan";
 import Scheduler from "../scheduler/scheduler";
+import History from "../history/history";
 
 type StatCardProps = {
   icon: ReactNode;
@@ -34,9 +35,9 @@ function StatCard({ icon, label, value, status }: StatCardProps) {
 
 function Home() {
   return (
-    <main className="mx-auto max-w-7xl space-y-8 p-4 md:p-8">
-      {/* Layout container with max width for desktop */}
+    <>
       <NavBar />
+    <main className="mx-auto max-w-7xl space-y-8 p-4 md:p-8">
       {/* Header – stacks on mobile, row on tablet+ */}
       <header className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
         <div>
@@ -94,7 +95,13 @@ function Home() {
       <section>
         <Scheduler />
       </section>
+
+      {/* History */}
+      <section>
+        <History />
+      </section>
     </main>
+    </>
   );
 }
 

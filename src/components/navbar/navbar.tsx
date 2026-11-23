@@ -1,9 +1,9 @@
-import Logo from "../../assets/illustrations/Logo"
-import { Bell, Menu } from "lucide-react"
+import Logo from "../../assets/illustrations/Logo";
+import { Bell, Menu } from "lucide-react";
 
 function NavBar() {
   return (
-    <nav className="flex items-center justify-between px-2 py-3">
+    <nav className="bg-[#fff] flex items-center justify-between py-3 px-4 md:px-8 sticky shadow-sm w-full">
       <div className="flex items-center gap-2 text-[32px] font-semibold tracking-tight text-navy lg:text-[40px]">
         <Logo className="h-[50px] w-20" />
         <span>WorkTrack</span>
@@ -20,7 +20,7 @@ function NavBar() {
         </button>
       </div>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
